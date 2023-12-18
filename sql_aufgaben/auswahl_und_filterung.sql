@@ -1,9 +1,12 @@
 --Wählen Sie alle Nutzer aus, die den Status 'Student' haben.
-
+    SELECT * FROM nutzer
+    WHERE status = 'Student';
 --Finden Sie alle Kurse, die eine Bewertung von mehr als 4.5 haben.
-
+    SELECT * FROM kurs
+    WHERE bewertung >= 4.5;
 --Listen Sie alle Nutzer auf, deren Vorname mit 'L' beginnt.
-
+    SELECT * FROM nutzer
+    WHERE vorname  LIKE 'L%';
 --Zeigen Sie alle Kommentare an, die eine Bewertung von weniger als 3 erhalten haben.
 
 --Ermitteln Sie alle Bestellungen, bei denen der Bezahlstatus 'TRUE' ist.
