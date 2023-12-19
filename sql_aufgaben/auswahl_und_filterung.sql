@@ -224,30 +224,34 @@
 ------------------------------------------------------------------------------------------------------------------------
 --Gesamtanzahl Nutzer:
 --Zählen Sie, wie viele Nutzer insgesamt in der Tabelle nutzer vorhanden sind.
-SELECT * FROM nutzer
+    SELECT count(nutzer) AS Gesamtnutzer FROM nutzer;
 --Durchschnittsbewertung:
 --Berechnen Sie die durchschnittliche Bewertung aller Kurse in der Tabelle kurs.
-
+    SELECT AVG(bewertung) AS Durchschnittliche_Bewertung FROM kurs;
 --Maximale Teilnehmerzahl:
 --Ermitteln Sie die höchste Teilnehmerzahl, die ein Kurs in der Tabelle kurs hat.
-
+    SELECT MAX(teilnehmerzahl) AS Höchste_Teilnehmer_Zahl_Im_Kurs FROM kurs;
 --Minimale Bewertung:
 --Finden Sie die niedrigste Bewertung, die ein Nutzer in der Tabelle kommentar gegeben hat.
-
+    SELECT MIN(bewertung) AS Niedrigste_Bebertung FROM kommentar;
 --Gesamtpreis der Bestellungen:
 --Berechnen Sie den Gesamtpreis der verkauften Kurse aus der Tabelle bestellung, indem Sie annehmen, dass jeder Kurs nur einmal pro Bestellung verkauft wurde.
-
+    SELECT SUM(preis) AS Gesamt_Preis FROM kurs;
 --Durchschnittsalter der Nutzer:
 --Bestimmen Sie das Durchschnittsalter der Nutzer. Sie müssen das aktuelle Datum verwenden, um das Alter basierend auf dem geburtstag zu berechnen.
-
+    SELECT AVG(EXTRACT(YEAR FROM AGE(NOW(), geburtstag))) AS Durchschnittsalter FROM nutzer;
 --Gesamtanzahl der Kommentare pro Kurs:
 --Zählen Sie, wie viele Kommentare jeder Kurs erhalten hat.
-
+    SELECT kurs_id, COUNT(kommentar_id) AS anzahl_kommentare
+    FROM kommentar
+    GROUP BY kurs_id;
 --Summe der Rabatte:
 --Addieren Sie alle Rabattwerte, die in der Tabelle gutschein angegeben sind.
-
+    SELECT SUM(rabatt) AS Gesamtsumme_Rabatte FROM gutschein;
 --Anzahl der Kurse pro Sprache:
 --Zählen Sie, wie viele Kurse für jede sprache angeboten werden.
-
+    SELECT sprache, COUNT(*) AS Kurs_Gesamt FROM kurs GROUP BY sprache;
 --Anzahl der unterschiedlichen Kategorien:
 --Finden Sie heraus, wie viele unterschiedliche kategorie-Werte in der Tabelle kurs vorhanden sind.
+    SELECT COUNT(DISTINCT(kategorie)) FROM kurs;
+------------------------------------------------------------------------------------------------------------------------
