@@ -242,7 +242,7 @@
     SELECT AVG(EXTRACT(YEAR FROM AGE(NOW(), geburtstag))) AS Durchschnittsalter FROM nutzer;
 --Gesamtanzahl der Kommentare pro Kurs:
 --Zählen Sie, wie viele Kommentare jeder Kurs erhalten hat.
-    SELECT kurs_id, COUNT(kommentar_id) AS anzahl_kommentare
+    SELECT kurs_id, COUNT(kommentar_id) AS Anzahl_Kommentare
     FROM kommentar
     GROUP BY kurs_id;
 --Summe der Rabatte:
@@ -255,3 +255,4 @@
 --Finden Sie heraus, wie viele unterschiedliche kategorie-Werte in der Tabelle kurs vorhanden sind.
     SELECT COUNT(DISTINCT(kategorie)) FROM kurs;
 ------------------------------------------------------------------------------------------------------------------------
+
