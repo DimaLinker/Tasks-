@@ -7,8 +7,8 @@
 
 
 const digitize = (n) => {
+    return String(n).split('').reverse().map(Number);
 
 }
 
-digitize(35231)
-digitize(0)
+console.log(digitize(35231))
