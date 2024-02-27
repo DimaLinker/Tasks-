@@ -255,4 +255,3 @@
 --Finden Sie heraus, wie viele unterschiedliche kategorie-Werte in der Tabelle kurs vorhanden sind.
     SELECT COUNT(DISTINCT(kategorie)) FROM kurs;
 ------------------------------------------------------------------------------------------------------------------------
-
